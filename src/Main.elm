@@ -25,3 +25,13 @@ update msg model =
 			model + 1
 		Decrement ->
 			model - 1	
+			
+-- View
+view : Model -> Html Msg
+view model = 
+	-- div takes two lists, one for attributes, one for child nodes
+	div [] 
+	[ button [ onClick Increment ] [ text "+" ]
+	, div [] [ text (String.fromInt model)]
+	, button [ onClick Decrement ] [ text "-" ]
+	]
