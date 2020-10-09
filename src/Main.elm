@@ -9,29 +9,29 @@ main =
 	
 -- Model 
 type alias Model = 
-	Int
+    Int
 	
 init : Model
 init = 
-	0
+    0
 	
 -- Update
 type Msg = Increment | Decrement
 	
 update : Msg -> Model -> Model
 update msg model = 
-	case msg of 
-		Increment ->
-			model + 1
-		Decrement ->
-			model - 1	
-			
+    case msg of 
+        Increment ->
+            model + 1
+        Decrement ->
+        model - 1	
+	
 -- View
 view : Model -> Html Msg
 view model = 
-	-- div takes two lists, one for attributes, one for child nodes
-	div [] 
-	[ button [ onClick Increment ] [ text "+" ]
-	, div [] [ text (String.fromInt model)]
-	, button [ onClick Decrement ] [ text "-" ]
-	]
+    -- div takes two lists, one for attributes, one for child nodes
+    div [] 
+    [ button [ onClick Increment ] [ text "+" ]
+    , div [] [ text (String.fromInt model)]
+    , button [ onClick Decrement ] [ text "-" ]
+    ]
